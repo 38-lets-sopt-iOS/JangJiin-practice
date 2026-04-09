@@ -6,8 +6,29 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D416773F2F8809F800786158 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D41677372F8809F800786158 /* Pretendard-Bold.otf */; };
+		D41677402F8809F800786158 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D416773B2F8809F800786158 /* Pretendard-Medium.otf */; };
+		D41677412F8809F800786158 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D416773D2F8809F800786158 /* Pretendard-SemiBold.otf */; };
+		D41677422F8809F800786158 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D41677362F8809F800786158 /* Pretendard-Black.otf */; };
+		D41677432F8809F800786158 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D416773E2F8809F800786158 /* Pretendard-Thin.otf */; };
+		D41677442F8809F800786158 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D41677382F8809F800786158 /* Pretendard-ExtraBold.otf */; };
+		D41677452F8809F800786158 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D416773A2F8809F800786158 /* Pretendard-Light.otf */; };
+		D41677462F8809F800786158 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D416773C2F8809F800786158 /* Pretendard-Regular.otf */; };
+		D41677472F8809F800786158 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D41677392F8809F800786158 /* Pretendard-ExtraLight.otf */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D41677152F8803C800786158 /* Sopt38-Seminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sopt38-Seminar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41677362F8809F800786158 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		D41677372F8809F800786158 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		D41677382F8809F800786158 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		D41677392F8809F800786158 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		D416773A2F8809F800786158 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		D416773B2F8809F800786158 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		D416773C2F8809F800786158 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		D416773D2F8809F800786158 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		D416773E2F8809F800786158 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -45,6 +66,7 @@
 		D416770C2F8803C800786158 = {
 			isa = PBXGroup;
 			children = (
+				D41677352F88096600786158 /* Font */,
 				D41677172F8803C800786158 /* Sopt38-Seminar */,
 				D41677162F8803C800786158 /* Products */,
 			);
@@ -56,6 +78,22 @@
 				D41677152F8803C800786158 /* Sopt38-Seminar.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D41677352F88096600786158 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				D41677362F8809F800786158 /* Pretendard-Black.otf */,
+				D41677372F8809F800786158 /* Pretendard-Bold.otf */,
+				D41677382F8809F800786158 /* Pretendard-ExtraBold.otf */,
+				D41677392F8809F800786158 /* Pretendard-ExtraLight.otf */,
+				D416773A2F8809F800786158 /* Pretendard-Light.otf */,
+				D416773B2F8809F800786158 /* Pretendard-Medium.otf */,
+				D416773C2F8809F800786158 /* Pretendard-Regular.otf */,
+				D416773D2F8809F800786158 /* Pretendard-SemiBold.otf */,
+				D416773E2F8809F800786158 /* Pretendard-Thin.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +160,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D416773F2F8809F800786158 /* Pretendard-Bold.otf in Resources */,
+				D41677402F8809F800786158 /* Pretendard-Medium.otf in Resources */,
+				D41677412F8809F800786158 /* Pretendard-SemiBold.otf in Resources */,
+				D41677422F8809F800786158 /* Pretendard-Black.otf in Resources */,
+				D41677432F8809F800786158 /* Pretendard-Thin.otf in Resources */,
+				D41677442F8809F800786158 /* Pretendard-ExtraBold.otf in Resources */,
+				D41677452F8809F800786158 /* Pretendard-Light.otf in Resources */,
+				D41677462F8809F800786158 /* Pretendard-Regular.otf in Resources */,
+				D41677472F8809F800786158 /* Pretendard-ExtraLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +196,6 @@
 				INFOPLIST_FILE = "Sopt38-Seminar/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -180,7 +226,6 @@
 				INFOPLIST_FILE = "Sopt38-Seminar/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
