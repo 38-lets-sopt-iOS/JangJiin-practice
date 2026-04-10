@@ -23,7 +23,8 @@ class LoginViewController : UIViewController{
         let textField = UITextField(frame: CGRect(x: 20, y: 276, width: 335, height: 52))
         textField.placeholder = "아이디"
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
-        textField.font = .boldSystemFont(ofSize: 14)
+        //textField.font = .boldSystemFont(ofSize: 14)
+        textField.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 0))
         textField.leftViewMode = .always
         return textField
@@ -32,44 +33,20 @@ class LoginViewController : UIViewController{
     let passwordTextField : UITextField = {
         let textField = UITextField(frame: CGRect(x: 20, y: 335, width: 335, height: 52))
         textField.placeholder = "비밀번호"
-        
-        ////비밀번호 칠 때 안보이게////
-        textField.isSecureTextEntry = true
-        textField.clearButtonMode = .whileEditing
-        ////////////////////////////////////
-        
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
-        textField.font = .boldSystemFont(ofSize: 14)
+        //textField.font = .boldSystemFont(ofSize: 14)
+        textField.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 0))
         textField.leftViewMode = .always
         return textField
     }()
     
-    
-    ////////////////////////////////////자동 로그인 기능 표현///////////////////////////////////////////////
-    let autoLoginLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 20, y: 399, width: 100, height: 24))
-        label.text = "자동 로그인"
-        label.font = UIFont(name: "Pretendard-Bold", size: 14)
-        label.textColor = .darkGray
-        return label
-    }()
-    let autoLoginSwitch: UISwitch = {
-        let uiSwitch = UISwitch(frame: CGRect(x: 295, y: 395, width: 49, height: 31))
-        uiSwitch.isOn = true
-        uiSwitch.onTintColor = .orange
-        uiSwitch.thumbTintColor = .white
-        return uiSwitch
-    }()
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    
-    
     lazy var loginButton : UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 515, width: 335, height: 57))
         button.setTitle("로그인하기", for: .normal)
         button.backgroundColor = .orange
-        button.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        //button.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 16)
         button.titleLabel?.textColor = .white
         button.titleLabel?.textAlignment = .center
         button.addTarget(self, action: #selector(loginButtonDidTap),for: .touchUpInside)
@@ -87,13 +64,6 @@ class LoginViewController : UIViewController{
         view.addSubview(loginTextField)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
-        
-        
-        
-        //////////////////////화면에 자동 로그인 추가/////////////////////////////////
-        view.addSubview(autoLoginLabel)
-        view.addSubview(autoLoginSwitch)
-        //////////////////////////////////////////////////////////////////////////////////
         
     }
     

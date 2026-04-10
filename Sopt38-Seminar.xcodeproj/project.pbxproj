@@ -16,7 +16,6 @@
 		D41677452F8809F800786158 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D416773A2F8809F800786158 /* Pretendard-Light.otf */; };
 		D41677462F8809F800786158 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D416773C2F8809F800786158 /* Pretendard-Regular.otf */; };
 		D41677472F8809F800786158 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D41677392F8809F800786158 /* Pretendard-ExtraLight.otf */; };
-		D41677492F881A5200786158 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = D41677482F881A4A00786158 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,7 +181,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D41677492F881A5200786158 /* .gitignore in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
