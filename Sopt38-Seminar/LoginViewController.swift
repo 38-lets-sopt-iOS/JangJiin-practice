@@ -36,6 +36,16 @@ class LoginViewController : UIViewController{
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
         //textField.font = .boldSystemFont(ofSize: 14)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        
+
+        ////비밀번호 칠 때 안보이게/////////////////////
+        textField.isSecureTextEntry = true
+        ////비밀번호 한꺼번에 없애는 버튼 추가///////
+        textField.clearButtonMode = .whileEditing
+        /////////////////////////////////////////////////////
+                
+        
+        
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 0))
         textField.leftViewMode = .always
         return textField
