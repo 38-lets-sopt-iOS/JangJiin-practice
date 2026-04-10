@@ -64,6 +64,26 @@ class LoginViewController : UIViewController{
     }()
     
     
+    ////////////////////////////////////자동 로그인 기능 표현///////////////////////////////////////////////
+        let autoLoginLabel: UILabel = {
+            let label = UILabel(frame: CGRect(x: 20, y: 399, width: 100, height: 24))
+            label.text = "자동 로그인"
+            label.font = UIFont(name: "Pretendard-Bold", size: 14)
+            label.textColor = .darkGray
+            return label
+        }()
+        let autoLoginSwitch: UISwitch = {
+            let uiSwitch = UISwitch(frame: CGRect(x: 295, y: 395, width: 49, height: 31))
+            uiSwitch.isOn = true
+            uiSwitch.onTintColor = .orange
+            uiSwitch.thumbTintColor = .white
+            return uiSwitch
+        }()
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -74,6 +94,14 @@ class LoginViewController : UIViewController{
         view.addSubview(loginTextField)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
+        
+        
+        
+        //////////////////////화면에 자동 로그인 추가/////////////////////////////////
+         view.addSubview(autoLoginLabel)
+         view.addSubview(autoLoginSwitch)
+         //////////////////////////////////////////////////////////////////////////////////
+        
         
     }
     
