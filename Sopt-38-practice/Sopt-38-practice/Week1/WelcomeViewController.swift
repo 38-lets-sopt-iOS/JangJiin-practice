@@ -8,13 +8,6 @@
 import UIKit
 
 class WelcomeViewController : UIViewController{
-    
-    let picture : UIImageView = {
-        let image = UIImageView(frame: CGRect(x: 112, y: 87, width: 150, height: 150))
-        image.image = UIImage(named: "image 52-1")
-        return image
-    }()
-    
     private var id : String?
     
     func configure(id : String?){
@@ -22,10 +15,14 @@ class WelcomeViewController : UIViewController{
         welcomeLabel.text="\(id ?? "")님\n반가워요!"
     }
     
+    let picture : UIImageView = {
+        let image = UIImageView(frame: CGRect(x: 112, y: 87, width: 150, height: 150))
+        image.image = UIImage(named: "image 52-1")
+        return image
+    }()
+    
     let welcomeLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 140, y: 295, width: 95, height: 60))
-        label.text = "???님\n반가워요!"
-        //label.font = .boldSystemFont(ofSize: 25)
         label.font = UIFont(name: "Pretendard-ExtraBold", size: 25)
         label.numberOfLines = 2
         label.textAlignment = .center
@@ -36,7 +33,6 @@ class WelcomeViewController : UIViewController{
         let button = UIButton(frame: CGRect(x: 20, y: 426, width: 335, height: 57))
         button.setTitle("메인으로", for: .normal)
         button.backgroundColor = .orange
-        //button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 16)
         button.titleLabel?.textColor = .white
         button.titleLabel?.textAlignment = .center
@@ -47,7 +43,6 @@ class WelcomeViewController : UIViewController{
         let button = UIButton(frame: CGRect(x: 20, y: 498, width: 335, height: 57))
         button.setTitle("다시 로그인", for: .normal)
         button.backgroundColor = .gray
-        //button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 16)
         button.titleLabel?.textColor = .darkGray
         button.titleLabel?.textAlignment = .center
@@ -62,10 +57,7 @@ class WelcomeViewController : UIViewController{
     }
     
     func setUI() {
-        view.addSubview(picture)
-        view.addSubview(welcomeLabel)
-        view.addSubview(loginAgainButton)
-        view.addSubview(mainButton)
+        view.addSubviews(picture,welcomeLabel,loginAgainButton,mainButton)
     }
     
     @objc
