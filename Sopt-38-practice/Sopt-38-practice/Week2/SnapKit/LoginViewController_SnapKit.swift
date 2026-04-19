@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SnapKit
 
-class LoginViewController : UIViewController{
+class LoginViewController_SnapKit : UIViewController{
+    
     let titleLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 76, y: 169, width: 236, height: 42))
+        let label = UILabel()
         label.text = "동네라서 가능한 모든 것\n당근에서 가까운 이웃과 함께해요."
         //label.font = .boldSystemFont(ofSize: 16)
         label.font=UIFont(name: "Pretendard-Bold", size: 16)
@@ -20,39 +22,39 @@ class LoginViewController : UIViewController{
     }()
     
     let loginTextField : UITextField = {
-        let textField = UITextField(frame: CGRect(x: 20, y: 276, width: 335, height: 52))
+        let textField = UITextField()
         textField.placeholder = "아이디"
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
         //textField.font = .boldSystemFont(ofSize: 14)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 0))
+        textField.leftView = UIView()
         textField.leftViewMode = .always
         return textField
     }()
     
     let passwordTextField : UITextField = {
-        let textField = UITextField(frame: CGRect(x: 20, y: 335, width: 335, height: 52))
+        let textField = UITextField()
         textField.placeholder = "비밀번호"
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
         //textField.font = .boldSystemFont(ofSize: 14)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+//        
+//
+//        ////비밀번호 칠 때 안보이게/////////////////////
+//        textField.isSecureTextEntry = true
+//        ////비밀번호 한꺼번에 없애는 버튼 추가///////
+//        textField.clearButtonMode = .whileEditing
+//        /////////////////////////////////////////////////////
+//                
         
-
-        ////비밀번호 칠 때 안보이게/////////////////////
-        textField.isSecureTextEntry = true
-        ////비밀번호 한꺼번에 없애는 버튼 추가///////
-        textField.clearButtonMode = .whileEditing
-        /////////////////////////////////////////////////////
-                
         
-        
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 0))
+        textField.leftView = UIView()
         textField.leftViewMode = .always
         return textField
     }()
     
     lazy var loginButton : UIButton = {
-        let button = UIButton(frame: CGRect(x: 20, y: 515, width: 335, height: 57))
+        let button = UIButton()
         button.setTitle("로그인하기", for: .normal)
         button.backgroundColor = .orange
         //button.titleLabel?.font = .boldSystemFont(ofSize: 16)
@@ -65,20 +67,20 @@ class LoginViewController : UIViewController{
     
     
     ////////////////////////////////////자동 로그인 기능 표현///////////////////////////////////////////////
-        let autoLoginLabel: UILabel = {
-            let label = UILabel(frame: CGRect(x: 20, y: 399, width: 100, height: 24))
-            label.text = "자동 로그인"
-            label.font = UIFont(name: "Pretendard-Bold", size: 14)
-            label.textColor = .darkGray
-            return label
-        }()
-        let autoLoginSwitch: UISwitch = {
-            let uiSwitch = UISwitch(frame: CGRect(x: 295, y: 395, width: 49, height: 31))
-            uiSwitch.isOn = true
-            uiSwitch.onTintColor = .orange
-            uiSwitch.thumbTintColor = .white
-            return uiSwitch
-        }()
+//        let autoLoginLabel: UILabel = {
+//            let label = UILabel()
+//            label.text = "자동 로그인"
+//            label.font = UIFont(name: "Pretendard-Bold", size: 14)
+//            label.textColor = .darkGray
+//            return label
+//        }()
+//        let autoLoginSwitch: UISwitch = {
+//            let uiSwitch = UISwitch()
+//            uiSwitch.isOn = true
+//            uiSwitch.onTintColor = .orange
+//            uiSwitch.thumbTintColor = .white
+//            return uiSwitch
+//        }()
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
     
@@ -88,7 +90,10 @@ class LoginViewController : UIViewController{
         super.viewDidLoad()
         view.backgroundColor = .white
         setUI()
+        setLayout()
     }
+    
+    
     func setUI() {
         view.addSubview(titleLabel)
         view.addSubview(loginTextField)
@@ -97,13 +102,34 @@ class LoginViewController : UIViewController{
         
         
         
-        //////////////////////화면에 자동 로그인 추가/////////////////////////////////
-         view.addSubview(autoLoginLabel)
-         view.addSubview(autoLoginSwitch)
-         //////////////////////////////////////////////////////////////////////////////////
-        
-        
+//        //////////////////////화면에 자동 로그인 추가/////////////////////////////////
+//         view.addSubview(autoLoginLabel)
+//         view.addSubview(autoLoginSwitch)
     }
+    
+    private func setLayout() {
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(169)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(57)
+        }
+        loginTextField.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(63)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(52)
+        }
+        passwordTextField.snp.makeConstraints {
+            $0.top.equalTo(loginTextField.snp.bottom).offset(7)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(52)
+        }
+        loginButton.snp.makeConstraints {
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(128)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(57)
+        }
+        
+        }
     
     @objc func loginButtonDidTap() {
         //presentToWelcomeVC()

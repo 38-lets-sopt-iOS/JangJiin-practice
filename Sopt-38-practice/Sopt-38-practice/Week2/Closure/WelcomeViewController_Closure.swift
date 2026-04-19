@@ -7,20 +7,20 @@
 
 import UIKit
 
-class WelcomeViewController : UIViewController{
+class WelcomeViewController_Closure : UIViewController{
+    var id: String? = nil
+    var backToLoginCompletion: ((String)->Void)?
+    
+    func configure(id : String?){
+        self.id = id
+        welcomeLabel.text="\(id ?? "")님\n반가워요!"
+    }
     
     let picture : UIImageView = {
         let image = UIImageView(frame: CGRect(x: 112, y: 87, width: 150, height: 150))
         image.image = UIImage(named: "image 52-1")
         return image
     }()
-    
-    private var id : String?
-    
-    func configure(id : String?){
-        self.id = id
-        welcomeLabel.text="\(id ?? "")님\n반가워요!"
-    }
     
     let welcomeLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 140, y: 295, width: 95, height: 60))
@@ -70,6 +70,12 @@ class WelcomeViewController : UIViewController{
     
     @objc
     private func backToLoginButtonDidTap(){
+        guard let backToLoginCompletion = backToLoginCompletion else{return}
+        
+        if let id = id{
+            backToLoginCompletion(id)
+        }
+        
         if self.navigationController == nil{
             self.dismiss(animated: true)
         }
