@@ -48,7 +48,6 @@ class LoginViewController : UIViewController{
         let button = UIButton(frame: CGRect(x: 20, y: 515, width: 335, height: 57))
         button.setTitle("로그인하기", for: .normal)
         button.backgroundColor = .orange
-        //button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 16)
         button.titleLabel?.textColor = .white
         button.titleLabel?.textAlignment = .center
@@ -81,7 +80,6 @@ class LoginViewController : UIViewController{
     }
     
     @objc func loginButtonDidTap() {
-        //presentToWelcomeVC()
         navaigationToWelcomeVC()
     }
     
@@ -93,7 +91,6 @@ class LoginViewController : UIViewController{
     
     private func navaigationToWelcomeVC(){
         let welcomeViewController = WelcomeViewController()
-        //welcomeViewController.id=loginTextField.text
         welcomeViewController.configure(id: loginTextField.text)
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
     }

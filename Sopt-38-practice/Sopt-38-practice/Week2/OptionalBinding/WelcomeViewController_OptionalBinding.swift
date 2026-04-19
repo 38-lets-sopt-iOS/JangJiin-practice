@@ -1,10 +1,3 @@
-//
-//  WelcomeViewController.swift
-//  Sopt38-Seminar
-//
-//  Created by 장지인 on 4/4/26.
-//
-
 import UIKit
 
 class WelcomeViewController_OptionalBinding : UIViewController{
@@ -25,12 +18,6 @@ class WelcomeViewController_OptionalBinding : UIViewController{
         }else{
             welcomeLabel.text="사용자님\n반가워요"
         }
-        
-//        guard let realId = id else{
-//            welcomeLabel.text="사용자님\n반가워요"
-//            return
-//        }
-//        welcomeLabel.text = "\(realId)님\n반가워요"
     }
     
     let welcomeLabel: UILabel = {
@@ -47,7 +34,6 @@ class WelcomeViewController_OptionalBinding : UIViewController{
         let button = UIButton(frame: CGRect(x: 20, y: 426, width: 335, height: 57))
         button.setTitle("메인으로", for: .normal)
         button.backgroundColor = .orange
-        //button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 16)
         button.titleLabel?.textColor = .white
         button.titleLabel?.textAlignment = .center
@@ -58,7 +44,6 @@ class WelcomeViewController_OptionalBinding : UIViewController{
         let button = UIButton(frame: CGRect(x: 20, y: 498, width: 335, height: 57))
         button.setTitle("다시 로그인", for: .normal)
         button.backgroundColor = .gray
-        //button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 16)
         button.titleLabel?.textColor = .darkGray
         button.titleLabel?.textAlignment = .center
@@ -73,10 +58,7 @@ class WelcomeViewController_OptionalBinding : UIViewController{
     }
     
     func setUI() {
-        view.addSubview(picture)
-        view.addSubview(welcomeLabel)
-        view.addSubview(loginAgainButton)
-        view.addSubview(mainButton)
+        view.addSubviews(picture,welcomeLabel,loginAgainButton,mainButton)
     }
     
     @objc

@@ -12,10 +12,10 @@ class LoginViewController_Closure : UIViewController{
     let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 76, y: 169, width: 236, height: 42))
         label.text = "동네라서 가능한 모든 것\n당근에서 가까운 이웃과 함께해요."
-        //label.font = .boldSystemFont(ofSize: 16)
-        label.font=UIFont(name: "Pretendard-Bold", size: 16)
+        label.font=UIFont(name: "Pretendard-Bold", size: 18)
         label.numberOfLines = 2
         label.textAlignment = .center
+        label.sizeToFit()
         return label
     }()
     
@@ -23,7 +23,6 @@ class LoginViewController_Closure : UIViewController{
         let textField = UITextField(frame: CGRect(x: 20, y: 276, width: 335, height: 52))
         textField.placeholder = "아이디"
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
-        //textField.font = .boldSystemFont(ofSize: 14)
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 0))
         textField.leftViewMode = .always
@@ -46,7 +45,7 @@ class LoginViewController_Closure : UIViewController{
         let button = UIButton(frame: CGRect(x: 20, y: 515, width: 335, height: 57))
         button.setTitle("로그인하기", for: .normal)
         button.backgroundColor = .orange
-        button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 16)
+        button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 18)
         button.titleLabel?.textColor = .white
         button.titleLabel?.textAlignment = .center
         button.addTarget(self, action: #selector(loginButtonDidTap),for: .touchUpInside)
@@ -76,22 +75,11 @@ class LoginViewController_Closure : UIViewController{
         setUI()
     }
     func setUI() {
-        view.addSubview(titleLabel)
-        view.addSubview(loginTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(loginButton)
-        
-        
-        
-         view.addSubview(autoLoginLabel)
-         view.addSubview(autoLoginSwitch)
-         //////////////////////////////////////////////////////////////////////////////////
-        
+        view.addSubviews(titleLabel,loginTextField,passwordTextField,loginButton,autoLoginLabel,autoLoginSwitch)
         
     }
     
     @objc func loginButtonDidTap() {
-        //presentToWelcomeVC()
         navaigationToWelcomeVC()
     }
     
@@ -103,11 +91,11 @@ class LoginViewController_Closure : UIViewController{
     
     private func navaigationToWelcomeVC(){
         let welcomeViewController = WelcomeViewController_Closure()
-        //welcomeViewController.id=loginTextField.text
         welcomeViewController.configure(id: loginTextField.text)
         welcomeViewController.backToLoginCompletion = { [weak self]data in guard let self else {return}
             print("클로저로 받아온 데이터는 바로 \(data)임!!")
             self.titleLabel.text = "\(data)님, 다시 로그인해야해요!"
+            self.titleLabel.font=UIFont(name: "Pretendard-Bold", size:18)
             self.loginTextField.text = ""
             self.passwordTextField.text = ""
         }
