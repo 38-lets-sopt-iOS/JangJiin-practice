@@ -14,11 +14,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let loginViewController = LoginViewController()
-        let navigationController = UINavigationController(rootViewController: loginViewController) // 네비게이션 컨트롤러 추가
+        let loginViewController = AutoLayout_Practice()
+        let navigationController = UINavigationController(rootViewController: loginViewController)
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = navigationController // 네비게이션 컨트롤러를 루트뷰로 설정
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
     }

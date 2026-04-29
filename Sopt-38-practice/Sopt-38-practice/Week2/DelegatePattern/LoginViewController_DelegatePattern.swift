@@ -7,18 +7,22 @@
 //
 
 import UIKit
-extension UIView{
-    func addSubviews(_ views: UIView...){
-        views.forEach {self.addSubview($0)}
+
+class LoginViewController_DelegatePattern : UIViewController, RetryLoginDelegateProtocol{
+    func retryLogin(id: String) {
+        loginTextField.text=""
+        passwordTextField.text=""
+        titleLabel.text="\(id)님, 다시 로그인해야해요!"
+        titleLabel.font=UIFont(name: "Pretendard-Bold", size: 18)
     }
-}
-class LoginViewController : UIViewController{
+    
     let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 76, y: 169, width: 236, height: 42))
         label.text = "동네라서 가능한 모든 것\n당근에서 가까운 이웃과 함께해요."
-        label.font=UIFont(name: "Pretendard-Bold", size: 16)
+        label.font=UIFont(name: "Pretendard-Bold", size: 18)
         label.numberOfLines = 2
         label.textAlignment = .center
+        label.sizeToFit()
         return label
     }()
     
@@ -55,8 +59,8 @@ class LoginViewController : UIViewController{
         return button
     }()
     
-        let autoLoginLabel: UILabel = {
-            let label = UILabel(frame: CGRect(x: 20, y: 399, width: 100, height: 24))
+    let autoLoginLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 20, y: 399, width: 100, height: 24))
             label.text = "자동 로그인"
             label.font = UIFont(name: "Pretendard-Bold", size: 14)
             label.textColor = .darkGray
@@ -68,15 +72,18 @@ class LoginViewController : UIViewController{
             uiSwitch.onTintColor = .orange
             uiSwitch.thumbTintColor = .white
             return uiSwitch
-        }()
-        
+    }()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUI()
     }
     func setUI() {
-        view.addSubviews(titleLabel,loginTextField,passwordTextField,loginButton,loginButton,autoLoginLabel,autoLoginSwitch)
+        view.addSubviews(titleLabel,loginTextField,loginButton,passwordTextField,autoLoginLabel,autoLoginSwitch)
+        
     }
     
     @objc func loginButtonDidTap() {
@@ -84,14 +91,16 @@ class LoginViewController : UIViewController{
     }
     
     private func presentToWelcomeVC() {
-        let welcomeVC = WelcomeViewController()
+        let welcomeVC = WelcomeViewController_DelegatePattern()
         welcomeVC.modalPresentationStyle = .formSheet
         self.present(welcomeVC, animated: true)
     }
     
     private func navaigationToWelcomeVC(){
-        let welcomeViewController = WelcomeViewController()
+        let welcomeViewController = WelcomeViewController_DelegatePattern()
         welcomeViewController.configure(id: loginTextField.text)
+        welcomeViewController.delegate=self
+
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
     }
 }
