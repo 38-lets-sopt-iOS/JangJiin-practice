@@ -50,8 +50,8 @@
 		D4A80D6B2F892E3400D4D627 = {
 			isa = PBXGroup;
 			children = (
-				D4A80D762F892E3400D4D627 /* Sopt-38-practice */,
 				D4A80D752F892E3400D4D627 /* Products */,
+				D4A80D762F892E3400D4D627 /* Sopt-38-practice */,
 			);
 			sourceTree = "<group>";
 		};
