@@ -7,18 +7,15 @@
 //
 
 import UIKit
-extension UIView{
-    func addSubviews(_ views: UIView...){
-        views.forEach {self.addSubview($0)}
-    }
-}
-class LoginViewController : UIViewController{
+
+class LoginViewController_OptionalBinding : UIViewController{
     let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 76, y: 169, width: 236, height: 42))
         label.text = "동네라서 가능한 모든 것\n당근에서 가까운 이웃과 함께해요."
-        label.font=UIFont(name: "Pretendard-Bold", size: 16)
+        label.font=UIFont(name: "Pretendard-Bold", size: 18)
         label.numberOfLines = 2
         label.textAlignment = .center
+        label.sizeToFit()
         return label
     }()
     
@@ -54,9 +51,8 @@ class LoginViewController : UIViewController{
         button.addTarget(self, action: #selector(loginButtonDidTap),for: .touchUpInside)
         return button
     }()
-    
-        let autoLoginLabel: UILabel = {
-            let label = UILabel(frame: CGRect(x: 20, y: 399, width: 100, height: 24))
+    let autoLoginLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 20, y: 399, width: 100, height: 24))
             label.text = "자동 로그인"
             label.font = UIFont(name: "Pretendard-Bold", size: 14)
             label.textColor = .darkGray
@@ -68,15 +64,15 @@ class LoginViewController : UIViewController{
             uiSwitch.onTintColor = .orange
             uiSwitch.thumbTintColor = .white
             return uiSwitch
-        }()
-        
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUI()
     }
     func setUI() {
-        view.addSubviews(titleLabel,loginTextField,passwordTextField,loginButton,loginButton,autoLoginLabel,autoLoginSwitch)
+        view.addSubviews(titleLabel,loginButton,loginTextField,passwordTextField,autoLoginLabel,autoLoginSwitch)
     }
     
     @objc func loginButtonDidTap() {
@@ -84,14 +80,14 @@ class LoginViewController : UIViewController{
     }
     
     private func presentToWelcomeVC() {
-        let welcomeVC = WelcomeViewController()
+        let welcomeVC = WelcomeViewController_OptionalBinding()
         welcomeVC.modalPresentationStyle = .formSheet
         self.present(welcomeVC, animated: true)
     }
     
     private func navaigationToWelcomeVC(){
-        let welcomeViewController = WelcomeViewController()
-        welcomeViewController.configure(id: loginTextField.text)
-        self.navigationController?.pushViewController(welcomeViewController, animated: true)
+        let welcomeViewController_OptionalBinding = WelcomeViewController_OptionalBinding()
+        welcomeViewController_OptionalBinding.configure(id: loginTextField.text)
+        self.navigationController?.pushViewController(welcomeViewController_OptionalBinding, animated: true)
     }
 }
