@@ -1,0 +1,26 @@
+//
+//  ScrollViewPractice2.swift
+//  SOPT-38-SwiftUI
+//
+//  Created by 장지인 on 5/16/26.
+//
+
+import SwiftUI
+
+struct ScrollViewPractice2: View {
+    var body: some View {
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach(1..<100) {
+                    Text("Item \($0)")
+                        .font(.title)
+                }
+            }
+        }
+        .frame(maxWidth: .infinity)
+    }
+}
+
+#Preview {
+    ScrollViewPractice2()
+}
